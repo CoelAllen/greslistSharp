@@ -49,9 +49,18 @@ public class HousesRepository
     return houseData;
   }
 
+  public void RemoveCar(int id)
+  {
+    var sql = @"
+    DELETE FROM houses WHERE id = @id;";
+    _db.Execute(sql, new { id });
+  }
+
   public House GetHouse(int id)
   {
     var sql = "SELECT * FROM houses WHERE Id =id";
     return _db.Query<House>(sql).FirstOrDefault();
   }
+
+
 }

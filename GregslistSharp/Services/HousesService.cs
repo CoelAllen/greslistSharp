@@ -36,4 +36,10 @@ public class HousesService
 
     return _hr.EditHouse(houseData);
   }
+
+  public void RemoveCar(int id)
+  {
+    _hr.RemoveCar(id);
+
+  }
 }

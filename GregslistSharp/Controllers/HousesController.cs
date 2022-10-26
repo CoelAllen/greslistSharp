@@ -67,4 +67,18 @@ public class HousesController : ControllerBase
       return BadRequest(e.Message);
     }
   }
+
+  [HttpDelete("{id}")]
+  public ActionResult<House> Delete(int id)
+  {
+    try
+    {
+      _hs.RemoveCar(id);
+      return Ok("Deleted");
+    }
+    catch (Exception e)
+    {
+      return BadRequest(e.Message);
+    }
+  }
 }
